@@ -9,6 +9,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "claudia-bot-builder": "^2.2.0",
+    "eslint": "^3.8.1",
+    "eslint-config-rallycoding": "^3.1.0",
     "express": "~4.11.x",
     "kerberos": "~0.0.x",
     "parse": "~1.8.0",
