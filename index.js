@@ -39,6 +39,16 @@ app.get('/', function(req, res) {
   res.status(200).send('Make sure to star the parse-server repo on GitHub!');
 });
 
+app.get('/botcall', function(req, res) {
+  if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === 'tc_codigo_bot') {
+    console.log("Validating webhook");
+    res.status(200).send(req.query['hub.challenge']);
+  } else {
+    console.error("Failed validation. Make sure the validation tokens match.");
+    res.sendStatus(403);          
+  }  
+});
+
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
 app.get('/test', function(req, res) {
